@@ -2,8 +2,9 @@ services:
   - type: web
     name: startupvault-api
     runtime: java
-    buildCommand: ./mvnw package -DskipTests
+    buildCommand: chmod +x mvnw && ./mvnw package -DskipTests
     startCommand: java -jar target/backend-0.0.1-SNAPSHOT.jar
+
     envVars:
       - key: DB_URL
         sync: false
